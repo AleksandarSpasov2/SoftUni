@@ -1,0 +1,4 @@
+
+
+year = int(input)
+
