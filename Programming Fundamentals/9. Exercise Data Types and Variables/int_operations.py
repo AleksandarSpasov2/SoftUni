@@ -1,5 +1,10 @@
-first_name = str(input())
-second_name = str(input())
-delimiter = str(input())
+input_1 = int(input())
+input_2 = int(input())
+input_3 = int(input())
+input_4 = int(input())
 
-print(f'{first_name}{delimiter}{second_name}')
+second = input_1 + input_2
+third = second / input_3
+fourth = int(third) * input_4
+
+print(fourth)

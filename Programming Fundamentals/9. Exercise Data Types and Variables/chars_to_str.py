@@ -1,10 +1,7 @@
-input_1 = int(input())
-input_2 = int(input())
-input_3 = int(input())
-input_4 = int(input())
+input_1 = str(input())
+input_2 = str(input())
+input_3 = str(input())
 
-second = input_1 + input_2
-third = second / input_3
-fourth = int(third) * input_4
+result = input_1 + input_2 + input_3
 
-print(fourth)
+print(result)
