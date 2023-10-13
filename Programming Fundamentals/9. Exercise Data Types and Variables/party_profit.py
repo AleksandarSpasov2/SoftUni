@@ -23,10 +23,6 @@ for day in range(1, days + 1):
         if day % 3 == 0:
             coins -= 2 * group_size
 
-
-
 coins_per_person = floor(coins / group_size)
 
 print(f'{group_size} companions received {coins_per_person} coins each.')
-
-
