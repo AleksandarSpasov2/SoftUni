@@ -16,11 +16,11 @@ for games in range(1, lost_games_count + 1):
     if games % 3 == 0:
         total_repairs += sword_price
 
-    if games % 6 == 0:
+    if games % 3 == 0 and games % 2 == 0:
         counter += 1
         total_repairs += shield_price
 
-    if counter == 12:
+    if counter == 2:
         counter = 0
         total_repairs += armor_price
 
