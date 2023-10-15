@@ -11,4 +11,6 @@ for i in range(n):
     else:
         positive_list.append(num)
 
-        
+print(positive_list)
+print(negative_list)
+
