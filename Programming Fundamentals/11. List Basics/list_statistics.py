@@ -13,4 +13,5 @@ for i in range(n):
 
 print(positive_list)
 print(negative_list)
-
+print(positive_list.count())
+print(negative_list.count())
