@@ -19,14 +19,14 @@ elif command == "odd":
         if j % 2 != 0:
             filtered_list.append(j)
 
-if command == "negative":
+elif command == "negative":
     for j in big_list:
         if j < 0:
             filtered_list.append(j)
 
-if command == "positive":
+elif command == "positive":
     for j in big_list:
-        if j > 0:
+        if j >= 0:
             filtered_list.append(j)
 
 print(filtered_list)
