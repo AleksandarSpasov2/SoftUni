@@ -9,3 +9,10 @@ for i in range(n):
     my_list.append(user_input)
 
 print(my_list)
+
+filtered_string = []
+
+for current_string in my_list:
+    if word in current_string:
+        filtered_string.append(current_string)
+print(filtered_string)
