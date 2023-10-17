@@ -6,7 +6,7 @@ list_new = []
 
 
 for i in list_old:
-    i.
+    
 
 
 
