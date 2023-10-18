@@ -1,9 +1,9 @@
-my_list = str(input().split())
+my_list = input().split()
 
 new_list = []
 
 for i in my_list:
-    cuurrent_number = -int(i)
-    new_list.append(cuurrent_number)
+    current_number = -int(i)
+    new_list.append(current_number)
 
 print(new_list)
