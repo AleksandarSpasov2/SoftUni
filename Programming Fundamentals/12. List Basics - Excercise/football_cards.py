@@ -18,4 +18,4 @@ for players in terminated_players:
 print(f' "Team A - {len(team_a)}; Team B - {len(team_b)}"')
 
 if is_game_terminated:
-    print()
+    print(f'Game was terminated')
