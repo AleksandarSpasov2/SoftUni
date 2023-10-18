@@ -1,12 +1,9 @@
-num = str(input())
+my_list = str(input().split())
 
-list_old = [num]
+new_list = []
 
-list_new = []
+for i in my_list:
+    cuurrent_number = -int(i)
+    new_list.append(cuurrent_number)
 
-
-for i in list_old:
-    
-
-
-
+print(new_list)
