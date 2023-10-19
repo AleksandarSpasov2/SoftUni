@@ -9,13 +9,13 @@ for players in terminated_players:
     if players in team_a:
         team_a.remove(players)
     elif players in team_b:
-        team_a.remove(players)
+        team_b.remove(players)
 
     if len(team_a) < 7 or len(team_b) < 7:
         is_game_terminated = True
         break
 
-print(f' "Team A - {len(team_a)}; Team B - {len(team_b)}"')
+print(f'Team A - {len(team_a)}; Team B - {len(team_b)}')
 
 if is_game_terminated:
     print(f'Game was terminated')
