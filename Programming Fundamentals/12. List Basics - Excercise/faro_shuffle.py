@@ -9,6 +9,7 @@ for shuffle in range(number_of_shuffles):
     for card_index in range(len(left_part)):
         deck_after_shuffle.append(left_part[card_index])
         deck_after_shuffle.append(right_part[card_index])
+    cards = deck_after_shuffle
 
 print(deck_after_shuffle)
 
