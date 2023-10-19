@@ -1,8 +1,6 @@
-gifts = input().split()
+a = "a"
+b = "b"
+c = "2"
 
-command = input()
+my_list = []
 
-tokens = command.split()
-
-print(gifts)
-print(tokens)
