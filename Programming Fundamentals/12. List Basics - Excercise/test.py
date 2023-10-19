@@ -1,13 +1,22 @@
-a = "a"
-b = "b"
-c = "2"
+user_input = input().split()
 
 my_list = []
 
-my_list.append(a)
-my_list.append(b)
-my_list.append(c)
+for digit in user_input:
+    my_list.append(digit)
 
-my_list[0], my_list[2] = my_list[2], my_list[0]
+new_list_int = []
 
-print(my_list)
+for index in my_list:
+    new_list_int.append(int(index))
+
+newest_list = []
+
+for index_2 in new_list_int:
+    new_index = index_2 * 2
+    newest_list.append(new_index)
+
+for index_2 in newest_list:
+    
+
+print(newest_list)
