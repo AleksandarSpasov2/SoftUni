@@ -11,10 +11,12 @@ for event in events:
     event_value = int(event_items[1])
 
     if type_of_event == "rest":
+        current_energy = total_energy
         total_energy += event_value
         if total_energy > 100:
             total_energy = 100
-        print(f"You gained {event_value} energy.")
+        gained_energy = total_energy - current_energy
+        print(f"You gained {gained_energy} energy.")
         print(f"Current energy: {total_energy}.")
 
     elif type_of_event == "order":
