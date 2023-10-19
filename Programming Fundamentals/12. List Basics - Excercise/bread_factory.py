@@ -31,16 +31,15 @@ for event in events:
             total_coins -= event_value
             print(f"You bought {type_of_event}.")
         else:
-            print(f"Closed! Cannot afford {type_of_event}.")
             is_factory_open = False
             break
-            
+
 if is_factory_open:
     print(f"Day completed!")
     print(f"Coins: {total_coins}")
     print(f"Energy: {total_energy}")
 
 else:
-
+    print(f"Closed! Cannot afford {type_of_event}.")
 
 
