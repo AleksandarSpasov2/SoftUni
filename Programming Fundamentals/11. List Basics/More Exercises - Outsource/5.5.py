@@ -3,8 +3,6 @@ def list_string(list_input):
     for index in list_input:
         new_list.append(str(index))
     return new_list
-
-
 def match_words(words):
     magic_word = 0
     for word in words:
