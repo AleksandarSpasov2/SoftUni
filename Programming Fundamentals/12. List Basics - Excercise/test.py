@@ -1,15 +1,10 @@
-user_input = input().split()
+factor = int(input())
+count = int(input())
 
-mid_list = len(user_input) // 2
+new_list = []
 
-left_side = user_input[:mid_list]
-right_side = user_input[mid_list:]
-transformed_list = []
+for number in range(count):
+    variable = factor * number
+    new_list.append(variable)
 
-for card in range(len(left_side)):
-    transformed_list.append(left_side[card])
-    transformed_list.append(right_side[card])
-
-print(transformed_list)
-
-
+print(new_list)
