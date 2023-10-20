@@ -1,11 +1,8 @@
 def sum_list(items):
-    sum_numbers = 0
+    total = 0
 
     for i in items:
-        sum_numbers += i
+        total += i
+    return total
 
-    return sum_numbers
-
-print(sum_list(1,2,-8))
-
-    
+print(sum_list([1, 2, 5]))
