@@ -3,7 +3,7 @@ def calculation_function(action: str, num_1: int, num_2: int):
         result = num_1 * num_2
         return print(result)
     elif action == "divide":
-        result = num_1 / num_2
+        result = int(num_1 / num_2)
         return print(result)
     elif action == "add":
         result = num_1 + num_2
