@@ -7,9 +7,11 @@ def loading_bar(number_input):
         return print(f'{number_input}% [{l_b * "%"}{"." * (100 - l_b)}]\nStill loading ...')
 
 
-user_input = int(input())
+counter = 1
 while True:
-    number_to_be = 1
-    sleep(1.00)
-    loading_bar(number_to_be)
-    number_to_be += 1
+    sleep(0.25)
+    loading_bar(counter)
+    counter += 1
+    if counter == 100:
+        print(f'100% Complete!')
+        break
