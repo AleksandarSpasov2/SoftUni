@@ -6,6 +6,6 @@ first = int(input())
 second = int(input())
 third = int(input())
 
-small_element = smallest([first, second, third])
+smalets_element = smallest([first, second, third])
 
-print(small_element)
+print(smalets_element)
