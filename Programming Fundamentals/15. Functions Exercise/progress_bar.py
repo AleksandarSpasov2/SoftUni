@@ -10,7 +10,6 @@ def loading_graphic(user_input):
         return f'100% Complete!\n' + loading
 
 
-
 progress_bar = int(input())
 
 result = loading_graphic(progress_bar)
