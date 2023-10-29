@@ -11,8 +11,8 @@ def decrypt_message(input_list):
                 letter_part += char
 
         first_letter = chr(int(numeric_part))
-        last_letter = letter_part[-1]
-        second_letter = letter_part[0]
+        last_letter = letter_part[0]
+        second_letter = letter_part[-1]
 
         if len(letter_part) > 2:
             middle_letters = letter_part[1:-1]
