@@ -1,21 +1,20 @@
-message_input = input().split()
+def decrypt_message(input_list):
+    final_message = []
+    for word in input_list:
+        if word[0].isnumeric() and word[1].isnumeric() and word[2].isnumeric():
+            first_letter = chr((int(word[0]))+ int(word[1]) + int(word[2]))
+            last_letter = word[3]
+            middle_letters = word[:3:-1]
+        else:
+            first_letter = chr((int(word[0])) + int(word[1]))
+            last_letter = word[2]
+            middle_letters = word[:2:-1]
 
-for word in range(len(message_input)):
-    first_word = message_input[0]
-    second_word = message_input[1]
-    third_word = message_input[2]
-    first_word_num = "".join([element for element in first_word if element.isdigit()])
-    second_word_num = "".join([element for element in second_word if element.isdigit()])
-    third_word_num = "".join([element for element in third_word if element.isdigit()])
-
-    # first_decript = chr(int(first_word))
-    # second_decript = chr(int(second_word))
-    # third_decript = chr(int(third_word))
-
-
-
-
-
+        second_letter = word[-1]
+        new_word = first_letter + second_letter + middle_letters + last_letter
+        final_message.append(new_word)
+    return final_message
 
 
-
+secret_message = input().split()
+print(decrypt_message(secret_message))
