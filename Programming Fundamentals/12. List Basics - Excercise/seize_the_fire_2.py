@@ -1,1 +1,1 @@
-level_of_fire 
+level_of_fire
