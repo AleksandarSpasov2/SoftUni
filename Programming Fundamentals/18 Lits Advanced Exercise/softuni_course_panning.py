@@ -25,5 +25,16 @@ while True:
             schedule[index1], schedule[index2] = schedule[index2], schedule[index1]
 
     elif command_input[0] == "Exercise":
-        pass
+        lesson_title = command_input[1]
+        if lesson_title in schedule and f"{lesson_title}-Exercise" not in schedule:
+            lesson_index = schedule.index(lesson_title)
+            schedule.insert(lesson_index + 1, f"{lesson_title}-Exercise")
+        elif lesson_title not in schedule:
+            schedule.append(lesson_title)
+            schedule.append(f"{lesson_title}-Exercise")
+
+for idx, lesson in enumerate(schedule, 1):
+    print(f"{idx}.{lesson}")
+
+
 
