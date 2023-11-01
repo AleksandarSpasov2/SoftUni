@@ -1,11 +1,16 @@
 def main():
     sequence_of_element = input().split()
     count_of_moves = 0
-    command = input()
 
-    while True:  # change this to an infinite loop
+    while True:
+        command = input()
+
+        if command == "end":  # Check for the "end" command first
+            break
+
         count_of_moves += 1
         index1, index2 = map(int, command.split())
+
         if is_valid(index1, index2, sequence_of_element):
             handle_invalid_input(sequence_of_element, count_of_moves)
         else:
@@ -14,10 +19,6 @@ def main():
         if len(sequence_of_element) == 0:  # If all pairs are matched, exit
             print(f"You have won in {count_of_moves} turns!")
             return
-
-        command = input()
-        if command == "end":  # Check for the "end" command after processing the previous command
-            break
 
     if len(sequence_of_element) > 0:  # If the game ended with the "end" command and there are still elements
         print(f'Sorry you lose :(\n{" ".join(sequence_of_element)}')
