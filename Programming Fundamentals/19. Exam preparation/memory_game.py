@@ -3,7 +3,7 @@ def main():
     count_of_moves = 0
     command = input()
 
-    while command != "end":
+    while True:  # change this to an infinite loop
         count_of_moves += 1
         index1, index2 = map(int, command.split())
         if is_valid(index1, index2, sequence_of_element):
@@ -16,6 +16,8 @@ def main():
             return
 
         command = input()
+        if command == "end":  # Check for the "end" command after processing the previous command
+            break
 
     if len(sequence_of_element) > 0:  # If the game ended with the "end" command and there are still elements
         print(f'Sorry you lose :(\n{" ".join(sequence_of_element)}')
