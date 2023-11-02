@@ -5,7 +5,7 @@ def main():
 
     while True:
         command = input()
-        if command == "Retire":
+        if command == "Retire" or command == "":
             break
         command_input = command.split()
         action = command_input[0]
@@ -27,7 +27,6 @@ def main():
     print(f'Pirate ship status: {sum(status_pirate)}')
     print(f'Warship status: {sum(status_warship)}')
 
-
 def fire_function(status_warship, command_input):
     index = int(command_input[1])
     damage = int(command_input[2])
@@ -36,7 +35,6 @@ def fire_function(status_warship, command_input):
         if status_warship[index] <= 0:
             print("You won! The enemy ship has sunken.")
             return True
-
 
 def defend_function(command_input, status_pirate):
     start_index = int(command_input[1])
@@ -49,7 +47,6 @@ def defend_function(command_input, status_pirate):
                 print("You lost! The pirate ship has sunken.")
                 return True
 
-
 def repair_function(status_pirate, command_input, max_health):
     index = int(command_input[1])
     health = int(command_input[2])
@@ -58,7 +55,6 @@ def repair_function(status_pirate, command_input, max_health):
         if status_pirate[index] > max_health:
             status_pirate[index] = max_health
 
-
 def status_function(status_pirate, max_health):
     percent20 = max_health * 20 / 100
     counter = 0
@@ -66,6 +62,5 @@ def status_function(status_pirate, max_health):
         if status < percent20:
             counter += 1
     print(f"{counter} sections need repair.")
-
 
 main()
