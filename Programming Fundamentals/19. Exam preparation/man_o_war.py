@@ -16,15 +16,12 @@ def main():
         elif action == "Defend":
 
 
-
-
-
 def fire_function(status_warship, command_input):
-    index = command_input[1]
-    damage = command_input[2]
+    index = int(command_input[1])
+    damage = int(command_input[2])
     if index in status_warship:
         status_warship[index] -= damage
-        if status_warship[index] == 0:
+        if status_warship[index] <= 0:
             print("You won! The enemy ship has sunken.")
 
 
