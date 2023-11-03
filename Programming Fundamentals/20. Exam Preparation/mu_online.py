@@ -12,7 +12,7 @@ def main():
             health += number
 
             if health > 100:
-                current_heal = health + number - 100
+                current_heal = abs(health - number)
                 health = 100
                 print(f"You healed for {current_heal} hp.")
                 print(f"Current health: {health} hp.")
