@@ -3,6 +3,7 @@ def main():
     bitcoins = 0
     counter = 0
     dungeon_rooms = input().split("|")
+    
     for room in dungeon_rooms:
         counter += 1
         room_split = room.split()
