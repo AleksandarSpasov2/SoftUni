@@ -19,7 +19,7 @@ def main():
             string_input[cupid_location] -= 2
 
             if string_input[cupid_location] == 0:
-                print(f"Place {cupid_location} has Valentine's day")
+                print(f"Place {cupid_location} has Valentine's day.")
             elif string_input[cupid_location] < 0:
                 print(f"Place {cupid_location} already had Valentine's day.")
 
