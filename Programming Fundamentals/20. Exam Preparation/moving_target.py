@@ -5,7 +5,8 @@ def main():
         command = input()
 
         if command == "End":
-            break
+            return print("|".join(str(word) for word in targets))
+
         command_input = command.split()
         action = command_input[0]
         index = int(command_input[1])
@@ -20,6 +21,7 @@ def main():
 
         elif action == "Strike":
             radius = int(command_input[2])
+            strike_function(radius, index, targets)
 
 
 def shoot_function(power, index, targets):
@@ -35,8 +37,19 @@ def add_function(value, index, targets):
     else:
         print("Invalid placement!")
 
+
 def strike_function(radius, index, targets):
     index_strike = index + radius
-    if index_strike
+    last_index = targets.index(targets[-1])
+    if index_strike > last_index:
+        print("Strike missed!")
+    else:
+        start_index = max(0, index - radius)
+        end_index = min(len(targets) - 1, index + radius)
+        for i in range(end_index, start_index - 1, -1):
+            del targets[i]
+
+
+main()
 
 
