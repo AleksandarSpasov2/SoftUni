@@ -26,8 +26,3 @@ for index in indexes:
 
 for current_email in final_emails:
     print(current_email.get_info())
-
-
-
-
-
