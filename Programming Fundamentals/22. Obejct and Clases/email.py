@@ -9,7 +9,7 @@ class Email:
         self.is_self = True
 
     def get_info(self):
-        return f"{self.sender} says to {self.receiver}: {self.content}. Sent: {self.is_sent}"
+        return f"{self.sender} says to {self.receiver}: {self.content}. Sent: {self.is_self}"
 
 
 final_emails = []
