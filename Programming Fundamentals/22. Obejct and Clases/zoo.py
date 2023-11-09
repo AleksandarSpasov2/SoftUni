@@ -1,5 +1,5 @@
 class Zoo:
-    _animals = 0
+    __animals = 0
 
     def __init__(self, name):
         self.name = name
@@ -14,8 +14,30 @@ class Zoo:
             self.fishes.append(name)
         elif species == "birds":
             self.birds.append(name)
+        Zoo.__animals += 1
 
     def get_info(self, species):
-        return f"{self.species} in {self.name}: {self.names}\nTotal animals: {self._animals}"
-    
+        result = ''
+        if species == "mammal":
+            result += f'Mammals in {self.name}: {",".join(self.mammals)}\n'
+        elif species == "fish":
+            result += f'Fishes in {self.name}: {",".join(self.fishes)}\n'
+        elif species == "fish":
+            result += f'Birds in {self.name}: {",".join(self.birds)}\n'
+
+        result += f'Total animals: {Zoo.__animals}'
+        return result
+
+
+zoo_name = input()
+zoo_info = Zoo(zoo_name)
+n = int(input())
+for animal in range(n):
+    species, name = input().split()
+    zoo_info.add_animal(species, name)
+info = input()
+print(zoo_info.get_info(info))
+
+
+
 
