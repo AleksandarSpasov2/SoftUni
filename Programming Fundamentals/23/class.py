@@ -1,4 +1,4 @@
-class Class:
+class SchoolClass:
     __students_count = 22
 
     def __init__(self, name):
@@ -6,21 +6,22 @@ class Class:
         self.students = []
         self.grades = []
 
-    def add_student(self,name: str, grade: float):
-
-        if len(self.students) < 22:
+    def add_student(self, name: str, grade: float):
+        if len(self.students) < self.__students_count:
             self.students.append(name)
             self.grades.append(float(grade))
 
     def get_average_grade(self):
+        if not self.grades:
+            return 0  # handle the case where there are no grades to avoid division by zero
         average_grade = sum(self.grades) / len(self.grades)
         return average_grade
 
     def __repr__(self):
-        return f"The students in {self.name}: {', '.join(s for s in self.students)}. Average grade: {self.average_grade}"
+        return f"The students in {self.name}: {', '.join(s for s in self.students)}. Average grade: {self.get_average_grade()}"
 
 
-a_class = Class("11B")
+a_class = SchoolClass("11B")
 a_class.add_student("Peter", 4.80)
 a_class.add_student("George", 6.00)
 a_class.add_student("Amy", 3.50)
