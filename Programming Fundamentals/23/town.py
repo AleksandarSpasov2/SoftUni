@@ -5,11 +5,11 @@ class Town:
         self.latitude = "0°N"
         self.longitude = "0°E"
 
-    def set_latitude(self):
-        self.latitude
+    def set_latitude(self, new_latitude):
+        self.latitude = new_latitude
 
-    def set_longitude(self):
-        self.longitude
+    def set_longitude(self, new_longitude):
+        self.longitude = new_longitude
 
     def __repr__(self):
         return f"Town: {self.name} | Latitude: {self.latitude} | Longitude: {self.longitude}"
