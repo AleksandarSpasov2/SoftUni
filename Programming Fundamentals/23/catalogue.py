@@ -1,6 +1,5 @@
 class Catalogue:
     def __init__(self, name):
-        self.first_letter_list = None
         self.name = name
         self.products = []
 
@@ -8,15 +7,20 @@ class Catalogue:
         self.products.append(product_name)
 
     def get_by_letter(self, first_letter: str):
-        self.first_letter_list = []
-        for word in self.products:
-            if word[0] == self.first_letter_list:
-                self.first_letter_list.append(word)
-        return self.first_letter_list
+        first_letter_list = [word for word in self.products if word.startswith(first_letter)]
+        return first_letter_list
 
     def __repr__(self):
-        sorted_list = sorted(self.first_letter_list, key=lambda x: x.lower())
-        return f'Items in the {self.name} catalogue:\n' \
-               f'{sorted_list}'
+        sorted_list = sorted(self.products, key=lambda x: x.lower())
+        item = "\n".join(sorted_list)
+        return f"Items in the {self.name} catalogue:{item}"
 
 
+catalogue = Catalogue("Furniture")
+catalogue.add_product("Sofa")
+catalogue.add_product("Mirror")
+catalogue.add_product("Desk")
+catalogue.add_product("Chair")
+catalogue.add_product("Carpet")
+print(catalogue.get_by_letter("C"))
+print(catalogue)
