@@ -13,8 +13,10 @@ class Catalogue:
         return self.first_letter_list
 
     def __repr__(self):
-        items = "\n".join(s for s in self.first_letter_list)
-        return f'"Items in the {self.name} catalogue:{items}'
+        sorted_list = sorted(self.products, key=lambda x: x.lower())
+        item = "\n".join(self.products)
+        return f"Items in the {self.name} catalogue:{item}"
+
 
 catalogue = Catalogue("Furniture")
 catalogue.add_product("Sofa")
