@@ -1,7 +1,5 @@
 class Catalogue:
-
     def __init__(self, name: str):
-        self.first_letter_list = None
         self.name = name
         self.products = []
 
@@ -9,8 +7,7 @@ class Catalogue:
         self.products.append(product_name)
 
     def get_by_letter(self, first_letter: str):
-        self.first_letter_list = [word for word in self.products if word.startswith(first_letter)]
-        return self.first_letter_list
+        return [word for word in self.products if word.startswith(first_letter)]
 
     def __repr__(self):
         sorted_list = sorted(self.products, key=lambda x: x.lower())
