@@ -10,3 +10,7 @@ for index in range(len(keys)):
     my_dic[key] = value
 
 print(my_dic)
+
+student = dict(name="Alex", age=28, profession="software engineer")
+
+print(student)
