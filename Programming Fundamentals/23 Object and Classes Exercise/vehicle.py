@@ -10,7 +10,7 @@ class Vehicle:
         if money >= self.price and self.owner is None:
             self.owner = owner
             change = money - self.price
-            return f"Successfully bought a {self.type}. Change: {change}"
+            return f"Successfully bought a {self.type}. Change: {change:.2f}"
 
         elif money < self.price:
             return f"Sorry, not enough money"
