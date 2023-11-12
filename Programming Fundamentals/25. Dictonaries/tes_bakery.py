@@ -1,12 +1,14 @@
 def main():
     user_input = input().split(" ")
     bakery = {}
+    dict_create(user_input, bakery)
+    print(bakery)
+
+
+def dict_create(user_input, bakery):
     for i in range(0, len(user_input), 2):
         key = user_input[i]
         value = user_input[i + 1]
         bakery[key] = int(value)
 
-    print(bakery)
-
 main()
-
