@@ -2,7 +2,12 @@ def main():
     elements = input().split()
     bakery = {}
     dict_add(elements, bakery)
-    
+    searched_products = input().split()
+    for product in searched_products:
+        if product in bakery:
+            return f"We have {bakery[product]} of {product} left"
+        else:
+            return f"Sorry, we don't have {product}"
 
 
 def dict_add(elements, bakery):
