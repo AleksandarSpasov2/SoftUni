@@ -7,4 +7,4 @@ while True:
         break
 
     if counter % 2 == 0:
-        re
+        
