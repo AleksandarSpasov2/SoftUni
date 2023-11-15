@@ -6,5 +6,4 @@ while True:
     if item == 'stop':
         break
 
-    if counter % 2 == 0:
-        
+
