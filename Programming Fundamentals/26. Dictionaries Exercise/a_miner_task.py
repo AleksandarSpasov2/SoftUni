@@ -1,5 +1,4 @@
 resource_dict = {}
-counter = 1
 while True:
     item = input()
 
