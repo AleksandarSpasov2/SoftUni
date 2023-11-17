@@ -15,15 +15,12 @@ def main():
             product_dict[item]["price"] += price
             product_dict[item]["quantity"] += quantity
 
-    print_dict(product_dict, result=1)
+    print_dict(product_dict)
 
 
-def print_dict(product_dict, result=None):
+def print_dict(product_dict):
     for key, value in product_dict.items():
         result = value["price"] * value["quantity"]
         print(f'{key} -> {result:.2f}')
 
-
 main()
-
-
