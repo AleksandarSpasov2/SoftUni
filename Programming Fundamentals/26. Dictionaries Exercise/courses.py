@@ -5,7 +5,7 @@ def main():
         command = input()
         if command == "end":
             break
-        name, student = command.split(":")
+        name, student = command.split(" : ")
         if name not in course_dict.keys():
             course_dict[name] = [student]
         else:
@@ -18,7 +18,7 @@ def print_dict(course_dict):
     for key, value in course_dict.items():
         print(f'{key}: {len(value)}')
         for student in value:
-            print(f'--{student}')
+            print(f'-- {student}')
 
 
 main()
