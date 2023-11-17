@@ -1,63 +1,41 @@
-legendary_items = {"Shadowmourne": [250, "Shards"],
-                   "Valanyr": [250, "Fragments"],
-                   "Dragonwrath": [250, "Motes"]
-                   }
+from collections import OrderedDict
 
-junk_materials = {}
-legendary_items_found = {}
-
+items_input = input().split()
+items_dict = OrderedDict()
 shards = 0
 fragments = 0
 motes = 0
 
-user_input = input().split()
-for i in range(0, len(user_input), 2):
-    material = user_input[i]
-    quantity = int(user_input[i + 1])
-
-    is_legendary_found = False
-
-    if material == "Motes" or material == "Fragments" or material == "Shards":
-        if material == "Motes":
-            motes += quantity
-        elif material == "Fragments":
-            fragments += quantity
-        elif material == "Shards":
-            shards += quantity
-
-        for element in legendary_items_found.keys():
-            if element in legendary_items_found.keys():
-                legendary_items_found[element] += quantity
-            else:
-                legendary_items_found[element] = quantity
-
-        for key, value in legendary_items_found.items():
-            if key == "Motes" and value >= 250:
-                is_legendary_found = True
-                break
-            elif key == "Fragments" and value >= 250:
-                is_legendary_found = True
-                break
-            elif key == "Shards" and value >= 250:
-                is_legendary_found = True
-                break
+for i in range(0, len(items_input), 2):
+    quantity = int(items_input[i])
+    item_name = items_input[i + 1]
+    if item_name in items_dict.keys():
+        items_dict[item_name] += quantity
     else:
-        if material in junk_materials.keys():
-            junk_materials[material] += quantity
-        else:
-            junk_materials[material] = quantity
+        items_dict[item_name] = quantity
 
-if is_legendary_found:
-    if motes >= 250:
-        print("Dragonwrath obtained!")
-    elif fragments >= 250:
-        print("Valanyr obtained!")
-    elif shards >= 250:
-        print("Shadowmourne obtained!")
+for key, value in items_dict.items():
+    if key == "shards":
+        shards += value
+    elif key == "fragments":
+        fragments += value
+    elif key == "motes":
+        motes += value
 
-    print(f'shards: {shards}')
-    print(f'fragments: {fragments}')
-    print(f'motes: {motes}')
+if shards >= 250:
+    print("Shadowmourne obtained!")
+    shards -= 250
+elif fragments >= 250:
+    print("Valanyr obtained!")
+    fragments -= 250
+elif motes >= 250:
+    print("Dragonwrath obtained!")
+    motes -= 250
 
-    for key, value in junk_materials.items():
+print(f"shards: {shards}")
+print(f"fragments: {fragments}")
+print(f"motes: {motes}")
+
+for key, value in items_dict.items():
+    if key not in {"shards", "fragments", "motes"}:
         print(f'{key}: {value}')
