@@ -16,7 +16,7 @@ def main():
 
 def print_dict(course_dict):
     for key, value in course_dict.items():
-        print(f'{key}:{len(value)}')
+        print(f'{key}: {len(value)}')
         for student in value:
             print(f'--{student}')
 
