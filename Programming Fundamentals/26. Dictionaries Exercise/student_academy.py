@@ -1,11 +1,14 @@
 def main():
     rows = int(input())
     students = {}
-    for student in range(rows):
+    for _ in range(rows):
         name = input()
         grade = float(input())
-        if grade >= 4.5:
-            students[name] = grade
+        if name not in students.keys():
+            students[name] = [grade]
+        else:
+            # students[name] += grade
+
 
     print_students(students)
 
