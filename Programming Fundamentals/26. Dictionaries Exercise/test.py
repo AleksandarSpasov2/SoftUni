@@ -9,3 +9,6 @@ for student in range(row):
         students_dict[name] = [grade]
     else:
         students_dict[name] += [grade]
+
+for key, value in students_dict.items():
+    average_gr = sum(value) / len(value)
