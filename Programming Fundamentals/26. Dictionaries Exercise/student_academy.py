@@ -1,21 +1,15 @@
 def main():
-    rows = int(input())
-    students = {}
-    for _ in range(rows):
+    row = int(input())
+    students_dict = {}
+
+    for student in range(row):
         name = input()
         grade = float(input())
-        if name not in students.keys():
-            students[name] = [grade]
-        else:
-            # students[name] += grade
 
+        if name not in students_dict.keys():
+            students_dict[name] = [0]
+        students_dict[name] += [grade]
 
-    print_students(students)
-
-
-def print_students(students):
-    for key, value in students.items():
-        print(f'{key} -> {value:.2f}')
-
-
-main()
+def average_garde(students_dict):
+    for key, value in students_dict.items():
+        

@@ -16,6 +16,20 @@ while not obtained:
             items_dict["shards"] -= 250
             print("Shadowmourne obtained!")
             obtained = True
-        elif:
+
+        elif items_dict["fragments"] >= 250:
+            items_dict["fragments"] -= 250
+            print("Valanyr obtained!")
+            obtained = True
+
+        elif items_dict["motes"] >= 250:
+            items_dict["motes"] -= 250
+            print("Dragonwrath obtained!")
+            obtained = True
+
     items_input = input().split()
+
+for key, value in items_dict.items():
+    print(f'{key}: {value}')
+
 
