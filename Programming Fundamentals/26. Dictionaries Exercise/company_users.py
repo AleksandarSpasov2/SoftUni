@@ -19,7 +19,7 @@ def print_function(company_dict):
     for key, value in company_dict.items():
         print(key)
         for element in value:
-            print(f'--{element}')
+            print(f'-- {element}')
 
 
 main()
