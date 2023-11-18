@@ -25,7 +25,7 @@ def print_function(students):
     for key, value in students.items():
         print(f'{key} | {value[1]}')
 
-    
+
 
 
 
