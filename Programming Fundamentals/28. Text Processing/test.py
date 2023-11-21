@@ -2,6 +2,8 @@ def reverse_text(text: str):
     reversed_text = text[::-1]
     return reversed_text
 
+def print_half_text(text: str):
+    
 
 text_name = 'abcd'
 
