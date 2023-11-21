@@ -9,3 +9,5 @@ new_text = text_name[::-1]
 
 print(new_text)
 
+print(reverse_text(text_name))
+
