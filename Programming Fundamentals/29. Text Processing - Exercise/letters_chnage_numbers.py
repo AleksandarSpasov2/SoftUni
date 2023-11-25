@@ -1,9 +1,10 @@
 def main():
     string_input = input().split()
-    first_function(string_input)
+    total_sum = calculate_total_sum(string_input)
+    print(f"{total_sum:.2f}")
 
 
-def first_function(string_input):
+def calculate_total_sum(string_input):
     final_total_sum = 0
     for phrase in string_input:
         total_sum = 0
@@ -33,11 +34,10 @@ def first_function(string_input):
             total_sum += letter_number
 
         final_total_sum += total_sum
-    print(f'{final_total_sum:.2f}')
+    return final_total_sum
 
 
 def char_position(letter):
-    return ord(letter) - 97
-
+    return ord(letter.lower()) - ord('a') + 1
 
 main()
