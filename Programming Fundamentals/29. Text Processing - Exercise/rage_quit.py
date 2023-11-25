@@ -1,25 +1,27 @@
 def main():
     user_input = input()
+    list_input = list_maker(user_input)
+    counter = counter_function(list_input)
 
 
-def word_cycle(user_input):
-    final_char = ''
-    counter = 0
+def list_maker(user_input):
+    list_input = []
     for char in user_input:
-        number = 0
-        characters = ''
-        if char.isalpha():
-            characters += char
+        if char.isdigit():
+            list_input.append(char)
         else:
-            number += int(char)
-        capital_characters = capital_chars(characters)
-        final_char += capital_characters * number
-        counter += len(characters)
-        
+            list_input.append(char)
+    return list_input
 
 
-def capital_chars(characters):
-    capital_characters = ''
-    for char in characters:
-        capital_characters += char.upper()
-    return capital_characters
+def counter_function(list_input):
+    unique_characters = set(list_input)
+    return len(unique_characters)
+
+
+def range_message(list_input):
+    final_message = ''
+    for index, value in enumerate(list_input):
+        message = ''
+        number = 0
+        if
