@@ -10,6 +10,9 @@ def ticket_is_valid_characters(tickets):
 
 
 def ticket_is_valid_symbols(tickets):
+    special_symbols = ['@', '#', '$', '^']
     for ticket in tickets:
         left_part = ticket[:10]
-        right_part = ticket[11:]
+        right_part = ticket[10:]
+        
+
