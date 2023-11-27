@@ -6,3 +6,5 @@ string = 'word'
 my_list.insert(index, string)
 
 print(my_list)
+
+my_list.ins
