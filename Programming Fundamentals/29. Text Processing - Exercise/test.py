@@ -7,3 +7,6 @@ for ticket in tickets:
 
         print(left_part)
         print(right_part)
+
+    print(left_part)
+    print(right_part)
