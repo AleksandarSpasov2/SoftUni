@@ -13,5 +13,6 @@ while command_input != "Purchase":
     command_input = input()
 
 print(f'Bought furniture:')
-print("\n".join(furniture_list))
-print(f'Total money spend: {total_cost}')
+for element in furniture_list:
+    print(element)
+print(f'Total money spend: {total_cost:.2f}')
