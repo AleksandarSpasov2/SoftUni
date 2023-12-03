@@ -13,7 +13,7 @@ def events_function(command, main_dict):
         main_dict[town]['gold'] -= gold
         print(f'{town} plundered! {gold} gold stolen, {population} citizens killed.')
         if main_dict[town]['population'] == 0 or main_dict[town]["gold"] == 0:
-            print(f'"{town} has been wiped off the map!')
+            print(f'{town} has been wiped off the map!')
             del main_dict[town]
 
     elif action == 'Prosper':
