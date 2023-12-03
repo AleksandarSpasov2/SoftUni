@@ -2,7 +2,7 @@ import re
 
 n = int(input())
 
-pattern = r'((@)#+)(\b[A-Z][A-Za-z0-9]+[A-Z]\b)(\1)'
+pattern = r'(@{1}#+)(\b[A-Z][A-Za-z0-9]*[A-Z]\b)(@{1}#+)'
 
 for barcode in range(n):
     barcode_input = input()
