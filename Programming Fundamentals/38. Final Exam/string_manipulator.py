@@ -1,5 +1,3 @@
-
-
 string = input()
 
 command = input().split()
@@ -11,32 +9,33 @@ while action != 'End':
         string = string.replace(char, replacement)
         print(string)
 
-    elif command == 'Includes':
+    elif command[0] == 'Includes':
         substring = command[1]
         if substring in string:
             print(f'True')
         else:
             print(f'False')
 
-    elif command == 'Start':
+    elif command[0] == 'Start':
         substring = command[1]
         if string.startswith(substring):
             print(f'True')
         else:
             print(f'False')
 
-    elif command == 'Lowercase':
+    elif command[0] == 'Lowercase':
         string = string.lower()
         print(string)
 
-    elif command == 'FindIndex':
-        char = int(command[1])
+    elif command[0] == 'FindIndex':
+        char = command[1]
         index = string.index(char)
         print(index)
 
-    elif command == 'Remove':
+    elif command[0] == 'Remove':
         start_index, count = int(command[1]), int(command[2])
-        string = string[:start_index] + start_index[start_index + count:]
+        string = string[:start_index] + string[start_index + count:]
         print(string)
 
     command = input().split()
+    action = command[0]
