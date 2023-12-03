@@ -19,16 +19,24 @@ while action != 'End':
             print(f'False')
 
     elif command == 'Start':
-        substring = command[1] 
+        substring = command[1]
+        if string.startswith(substring):
+            print(f'True')
+        else:
+            print(f'False')
 
     elif command == 'Lowercase':
-        pass
+        string = string.lower()
+        print(string)
 
     elif command == 'FindIndex':
         char = int(command[1])
+        index = string.index(char)
+        print(index)
 
     elif command == 'Remove':
         start_index, count = int(command[1]), int(command[2])
-
+        string = string[:start_index] + start_index[start_index + count:]
+        print(string)
 
     command = input().split()
