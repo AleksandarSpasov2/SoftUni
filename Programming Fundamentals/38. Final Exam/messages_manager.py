@@ -10,6 +10,9 @@ while command[0] != 'Statistics':
         username, sent, received = command[1], int(command[2]), int(command[3])
         if username not in users_dict:
             users_dict[username] = {"sent": sent, 'received': received}
+            if users_dict[username]['sent'] + users_dict[username]['received'] >= capacity:
+                print(f'{username} reached the capacity!')
+                del users_dict[username]
 
     elif command[0] == 'Message':
         sender, receiver = command[1], command[2]
