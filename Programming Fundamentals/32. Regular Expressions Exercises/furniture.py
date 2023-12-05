@@ -1,6 +1,7 @@
 import re
 
 pattern = '>>([A-Za-z]+)<<([0-9]+\.?\d*)!(\d+)'
+
 total_cost = 0
 furniture_list = []
 command_input = input()
