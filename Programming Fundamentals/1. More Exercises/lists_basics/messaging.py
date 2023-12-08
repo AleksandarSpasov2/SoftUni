@@ -8,8 +8,6 @@ def sum_list(numbers_input):
         number = 0
 
 
-def 
-
 numbers_input = list(map(int, input().split()))
 string_input = input()
 new_message = ''
