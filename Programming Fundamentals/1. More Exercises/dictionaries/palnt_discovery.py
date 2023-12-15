@@ -23,7 +23,7 @@ def main():
 
 def add_plant(plants_dict, plant, rarity):
     if plant not in plants_dict:
-        plants_dict[plant]['rarity'] = rarity
+        plants_dict[plant] = {'rarity': rarity, 'rating': []}
     else:
         plants_dict[plant]['rarity'] = rarity
 
@@ -32,7 +32,7 @@ def rate_function(plants_dict, command):
     plant, rating = command[1].split(" - ")
     rating = int(rating)
     if plant not in plants_dict:
-        plants_dict[plant]['rating'] = [rating]
+        plants_dict[plant] = {'rarity': 0, 'rating': [rating]}
     else:
         plants_dict[plant]['rating'].append(rating)
 
@@ -41,9 +41,9 @@ def update_function(plants_dict, command):
     plant, new_rarity = command[1].split(" - ")
     new_rarity = int(new_rarity)
     if plant not in plants_dict:
-        print('error')
+        plants_dict[plant] = {'rarity': new_rarity, 'rating': []}
     else:
-        plants_dict[plant]['rating'] = new_rarity
+        plants_dict[plant]['rarity'] = new_rarity
 
 
 def reset_function(plants_dict, command):
