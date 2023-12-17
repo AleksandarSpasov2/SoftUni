@@ -7,6 +7,7 @@ def main():
         hero_name, hit_points, mana_points = input().split()
         mana_points = int(mana_points)
         hit_points = int(hit_points)
+
         if hero_name not in hero_dict:
             hero_dict[hero_name] = {'hp': 0, 'mp': 0}
         hero_dict[hero_name]['hp'] += hit_points
@@ -40,6 +41,7 @@ def main():
 
 
 def cast_spell_function(hero_dict, command):
+
     hero_name, mp_needed, spell_name = command[1], command[2], command[3]
     mp_needed = int(mp_needed)
 
@@ -52,6 +54,7 @@ def cast_spell_function(hero_dict, command):
 
 
 def take_damage_function(hero_dict, command):
+
     hero_name, damage, attacker = command[1], command[2], command[3]
     damage = int(damage)
     hero_dict[hero_name]['hp'] -= damage
@@ -65,8 +68,10 @@ def take_damage_function(hero_dict, command):
 
 
 def recharge_function(hero_dict, command):
+
     hero_name, amount = command[1], command[2]
     amount = int(amount)
+
     start_amount = hero_dict[hero_name]['mp']
     hero_dict[hero_name]['mp'] += amount
 
@@ -80,8 +85,10 @@ def recharge_function(hero_dict, command):
 
 
 def heal_function(hero_dict, command):
+
     hero_name, amount = command[1], command[2]
     amount = int(amount)
+    
     start_amount = hero_dict[hero_name]['hp']
     hero_dict[hero_name]['hp'] += amount
 
