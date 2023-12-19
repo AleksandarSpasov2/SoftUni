@@ -10,7 +10,6 @@ def main():
 
         command = input().split("|")
 
-
 def move_function(command, encrypted_message):
     number_of_letters = command[1]
     first_letters = encrypted_message[:number_of_letters]
