@@ -8,3 +8,5 @@ new_part = my_text[3:]
 final = first_part + new_part
 
 print(final)
+
+print('Happy New Year')
