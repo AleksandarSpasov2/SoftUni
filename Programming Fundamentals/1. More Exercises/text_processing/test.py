@@ -9,4 +9,12 @@ final = first_part + new_part
 
 print(final)
 
-print('Happy New Year')
+
+main_dict = {'name': 'Alex'}
+
+main_dict['new'] = main_dict['name']
+del main_dict['name']
+print(main_dict)
+
+
+exam_results = {'alex': {'language': 'pythone', }}
