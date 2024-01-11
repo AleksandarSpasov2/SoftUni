@@ -1,14 +1,14 @@
-user_input = input()
+expression = input()
 
-result = ''
-inside_parentheses = False
+new_expression = []
 
-for element in user_input:
-    if inside_parentheses:
-        if element == ')':
-            break
-        result += element
-    elif element == '(':
-        inside_parentheses = True
+for index in range(len(expression)):
+    if expression[index] == '(':
+        new_expression.append(index)
 
-print(result)
+    elif expression[index] == ')':
+        start_index = new_expression.pop()
+        end_index = index + 1
+        print(expression[start_index:end_index])
+
+
