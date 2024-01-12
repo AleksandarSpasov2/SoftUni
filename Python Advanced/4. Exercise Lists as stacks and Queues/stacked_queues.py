@@ -8,12 +8,13 @@ for _ in range(n):
         number = int(data[1])
         stack.append(number)
     elif data[0] == '2':
-        stack.pop()
+        if stack:
+            stack.pop()
     elif data[0] == '3':
         print(max(stack))
     elif data[0] == '4':
         print(min(stack))
 
-for element in range(len(stack)):
+while stack:
 
     print(stack.pop(), end=', ')
