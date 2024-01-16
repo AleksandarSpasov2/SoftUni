@@ -15,4 +15,4 @@ while orders:
         print(f'Orders left:', order, *orders)
 else:
     print(f'Orders complete')
-    
+
