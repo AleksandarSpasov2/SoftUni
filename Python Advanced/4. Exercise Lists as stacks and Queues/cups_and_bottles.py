@@ -13,7 +13,7 @@ while glasses and bottles:
         waster_water += current_bottle - current_cup
 
     else:
-        glasses.append((current_cup - current_bottle))
+        glasses.appendleft((current_cup - current_bottle))
 
 if glasses:
     print(f'Cups: ', *glasses)
