@@ -1,0 +1,1 @@
+tank = int(input())
