@@ -11,4 +11,5 @@ for _ in range(n):
 
 for key, value in students.items():
     average_grade = sum(value) / len(value)
+    
     print(f"{key} -> {' '.join(str(x) for x in value)} (avg: {average_grade:.2f})")
