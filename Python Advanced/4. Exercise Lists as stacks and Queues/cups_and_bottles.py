@@ -16,7 +16,7 @@ while glasses and bottles:
         glasses.appendleft((current_cup - current_bottle))
 
 if glasses:
-    print(f'Cups: ', *glasses)
+    print(f'Cups:', *glasses)
 else:
-    print(f'Bottles: ', *bottles)
-print(f'Wasted litters of water:{waster_water}')
+    print(f'Bottles:', *bottles)
+print(f'Wasted litters of water: {waster_water}')
