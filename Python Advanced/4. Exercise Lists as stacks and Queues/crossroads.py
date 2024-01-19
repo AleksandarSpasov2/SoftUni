@@ -1,3 +1,4 @@
+import sys
 from collections import deque
 
 green_light_duration = int(input())
@@ -23,14 +24,15 @@ while True:
                 current_green -= len(current_car)
                 total_cars_passed += 1
             else:
-                total_time = current_green + current_free
-                if len(current_car) <= total_time:
-                    total_cars_passed += 1
-                else:
-                    character_hit = len(current_car) - total_time
+                current_time = len(current_car) - (len(current_car) - current_green)
+                current_free -= current_time
+                character_hit = len(current_car) - current_time
+                if current_free < 0:
                     print("A crash happened!")
                     print(f"{current_car} was hit at {current_car[-character_hit:]}.")
-                    exit()
+                    sys.exit()
+                else:
+                    continue
 
     else:
         lane.append(command)
