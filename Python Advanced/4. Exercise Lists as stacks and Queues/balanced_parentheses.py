@@ -6,7 +6,7 @@ opening_p = deque()
 
 
 for element in parentheses_input:
-    if element == '({[':
+    if element == '(' or element == '{' or element == '[':
         opening_p.append(element)
 
     else:

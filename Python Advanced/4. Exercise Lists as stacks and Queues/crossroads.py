@@ -1,4 +1,3 @@
-import sys
 from collections import deque
 
 green_light_duration = int(input())
@@ -11,7 +10,7 @@ total_cars_passed = 0
 
 while True:
     if command == "END":
-        print("Everyone is safe.")
+        print(f"Everyone is safe.")
         print(f"{total_cars_passed} total cars passed the crossroads.")
         break
 
@@ -20,19 +19,19 @@ while True:
         current_free = free_window_duration
         while lane:
             current_car = lane.popleft()
-            if len(current_car) <= current_green:
-                current_green -= len(current_car)
+            if len(current_car) < current_green:
+                current_green = current_green - len(current_car)
                 total_cars_passed += 1
-            else:
-                current_time = len(current_car) - (len(current_car) - current_green)
-                current_free -= current_time
-                character_hit = len(current_car) - current_time
-                if current_free < 0:
-                    print("A crash happened!")
-                    print(f"{current_car} was hit at {current_car[-character_hit:]}.")
-                    sys.exit()
-                else:
+                continue
+            elif len(current_car) > current_green:
+                total_time = current_green + current_free
+                if len(current_car) < total_time:
+                    total_cars_passed += 1
                     continue
+            elif len(current_car) > current_green + current_free:
+                character_hit = len(current_car) - (current_green + current_free)
+                print(f'"A crash happened!"')
+                print(f"{current_car} was hit at {current_car[::-character_hit]}.")
 
     else:
         lane.append(command)
