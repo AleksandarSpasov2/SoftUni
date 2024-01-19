@@ -6,24 +6,33 @@ free_window_duration = int(input())
 command = input()
 
 lane = deque()
+total_cars_passed = 0
 
-while command != 'END':
-    if command != 'green':
-        lane.append(command)
-    else:
+while True:
+    if command == "END":
+        print("Everyone is safe.")
+        print(f"{total_cars_passed} total cars passed the crossroads.")
+        break
+
+    elif command == 'green':
         current_green = green_light_duration
         current_free = free_window_duration
-        current_car = lane.popleft()
-        total_duration = green_light_duration + free_window_duration
-        if len(current_car) > green_light_duration:
-            character_hit = len(current_car) - total_duration
-            print(f"A crash happened!")
-            print(f"{current_car} was hit at {character_hit - len(current_car)}.")
-            break
-        else:
-            current_green = len(current_car) - green_light_duration
-            if current_green < 0:
-                current_free = free_window_duration + current_green
-                current_green = 0
+        while lane:
+            current_car = lane.popleft()
+            if len(current_car) <= current_green:
+                current_green -= len(current_car)
+                total_cars_passed += 1
+            else:
+                total_time = current_green + current_free
+                if len(current_car) <= total_time:
+                    total_cars_passed += 1
+                else:
+                    character_hit = len(current_car) - total_time
+                    print("A crash happened!")
+                    print(f"{current_car} was hit at {current_car[-character_hit:]}.")
+                    exit()
+
+    else:
+        lane.append(command)
 
     command = input()
