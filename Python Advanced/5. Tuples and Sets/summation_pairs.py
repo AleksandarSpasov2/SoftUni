@@ -1,5 +1,9 @@
+import time
+
 numbers = [int(x) for x in input().split()]
 target = int(input())
+
+start = time.time()
 
 targets = set()
 values_map = {}
@@ -16,3 +20,6 @@ for value in numbers:
         resulting_number = target - value
         targets.add(resulting_number)
         values_map[resulting_number] = value
+
+end = time.time()
+print(f'Time range: {end-start}')
