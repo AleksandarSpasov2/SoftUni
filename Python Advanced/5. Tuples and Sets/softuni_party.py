@@ -1,14 +1,17 @@
-guests = set()
+n = int(input())
 
-for guest in range(int(input())):
-    guests.add(guest)
+party_guests = set()
 
-command = input()
-while command != "END":
-    if command in guests:
-        guests.remove(command)
-    command = input()
+for _ in range(n):
+    guest = input()
+    party_guests.add(guest)
 
-print(len(guests))
-for n in sorted(guests):
-    print(n)
+code = input()
+while code != 'END':
+    if code in party_guests:
+        party_guests.remove(code)
+    code = input()
+
+print(len(party_guests))
+for x in sorted(party_guests):
+    print(x)
