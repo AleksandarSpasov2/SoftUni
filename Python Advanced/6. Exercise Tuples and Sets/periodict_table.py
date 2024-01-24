@@ -6,5 +6,4 @@ for _ in range(n):
     for element in chemical_compounds:
         chemicals.add(element)
 
-for element in chemicals:
-    print(element)
+print(*chemicals, sep='\n')
