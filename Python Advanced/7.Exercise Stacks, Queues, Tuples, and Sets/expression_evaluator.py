@@ -1,23 +1,31 @@
 from collections import deque
+from math import floor
 
-string_expression = input().split()
+expression = deque(input().split())
 
-numbers = deque()
-symbols = deque()
+index = 0
 
-for element in string_expression:
-    if element.isdigit() or (element[0] == '-' and element[1].isdigit()):
-        element = int(element)
-        numbers.append(element)
-    else:
-        while numbers:
-            number = numbers.popleft()
-            symbol = symbols.popleft()
-            if symbol == '-':
-                
+while index < len(expression):
+    element = expression[index]
 
+    if element == '*':
+        for _ in range(index - 1):
+            expression.appendleft(int(expression.popleft()) * int(expression.popleft()))
+    elif expression == '/':
+        for _ in range(index - 1):
+            expression.appendleft(int(expression.popleft()) / int(expression.popleft()))
+    elif expression == '+':
+        for _ in range(index - 1):
+            expression.appendleft(int(expression.popleft()) + int(expression.popleft()))
+    elif expression == '-':
+        for _ in range(index - 1):
+            expression.appendleft(int(expression.popleft()) - int(expression.popleft()))
 
+    if element in '+-*/':
+        del expression[1]
+        index = 1
 
+    index += 1
 
-
+print(floor(int(expression[0])))
 
