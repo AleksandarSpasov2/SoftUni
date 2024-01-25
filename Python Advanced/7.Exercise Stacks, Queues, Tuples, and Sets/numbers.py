@@ -13,7 +13,7 @@ for _ in range(int(input())):
         numbers = range(int(command[2]), int(command[-1])+1)
         second_sequence.difference_update(int(x) for x in numbers)
     elif command[0] == 'Check':
-        if first_sequence.issubset(second_sequence):
+        if first_sequence.issubset(second_sequence) or second_sequence.issubset(first_sequence):
             print("True")
         else:
             print("False")
