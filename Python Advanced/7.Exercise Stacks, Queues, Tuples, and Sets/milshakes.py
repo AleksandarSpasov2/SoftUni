@@ -9,13 +9,7 @@ while milkshakes != 5 or chocolate or milk:
     curr_chocolate = chocolate.pop()
     curr_milk = milk.popleft()
 
-    if curr_milk <= 0 and curr_chocolate <= 0:
-        continue
-
-    if curr_milk <= 0:
-        continue
-
-    if curr_chocolate <= 0:
+    if curr_milk <= 0 or curr_chocolate <= 0:
         continue
 
     if curr_milk == curr_chocolate:
@@ -29,8 +23,5 @@ if milkshakes == 5:
 else:
     print(f"Not enough milkshakes.")
 
-
 print(f"Chocolate: {' ,'.join(str(x) for x in chocolate[::-1]) or 'empty'}")
-
-
 print(f'Milk: {" ,".join(str(x) for x in milk) or "empty"}')
