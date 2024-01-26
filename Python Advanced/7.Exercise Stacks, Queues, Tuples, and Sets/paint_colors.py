@@ -24,6 +24,7 @@ while words:
         for el in (first_part[:-1], second_part[:-1]):
             if el:
                 words.insert(len(words) // 2, el)
-                
+
+for color in set(req_colors.keys()).intersection(result):
 
 
