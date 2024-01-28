@@ -14,8 +14,8 @@ for row_data in range(row - 1):
     for col_data in range(col - 1):
         current_element = matrix[row_data][col_data]
         right_element = matrix[row_data][col_data + 1]
-        under_element = matrix[row_data - 1][col_data]
-        diagonal_element = matrix[row_data - 1][col_data - 1]
+        under_element = matrix[row_data + 1][col_data]
+        diagonal_element = matrix[row_data + 1][col_data + 1]
         total_sum = current_element + right_element + under_element + diagonal_element
         if maximum_sum < total_sum:
             maximum_sum = total_sum
