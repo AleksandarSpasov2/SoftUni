@@ -10,3 +10,5 @@ for i in range(row):
 
 print(total_sum)
 print(matrix)
+
+
