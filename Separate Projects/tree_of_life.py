@@ -1,6 +1,6 @@
 import turtle as tu
 
-roo = tu.Turtle()
+roo = tu.Turtle()  # Turtle object
 wn = tu.Screen()  # Screen Object
 wn.bgcolor("black")  # Screen Bg color
 wn.title("Fractal Tree Pattern")
@@ -9,7 +9,7 @@ roo.speed(20)  # setting the speed of the turtle
 
 
 def draw(l):  # recursive function taking length 'l' as argument
-    if (l < 5):
+    if (l < 10):
         return
     else:
 
@@ -33,7 +33,7 @@ roo.speed(2000)
 
 # recursion
 def draw(l):
-    if (l < 5):
+    if (l < 10):
         return
     else:
         roo.pensize(2)
@@ -56,7 +56,7 @@ roo.speed(2000)
 
 # recursion
 def draw(l):
-    if (l < 5):
+    if (l < 10):
         return
     else:
         roo.pensize(2)
@@ -79,7 +79,7 @@ roo.speed(2000)
 
 # recursion
 def draw(l):
-    if (l < 5):
+    if (l < 10):
         return
     else:
         roo.pensize(2)
@@ -100,7 +100,7 @@ draw(20)
 ########################################################
 
 def draw(l):
-    if (l < 5):
+    if (l < 10):
         return
     else:
 
@@ -124,7 +124,7 @@ roo.speed(2000)
 
 # recursion
 def draw(l):
-    if (l < 5):
+    if (l < 10):
         return
     else:
         roo.pensize(3)
@@ -147,7 +147,7 @@ roo.speed(2000)
 
 # recursion
 def draw(l):
-    if (l < 5):
+    if (l < 10):
         return
     else:
         roo.pensize(3)
@@ -170,7 +170,7 @@ roo.speed(2000)
 
 # recursion
 def draw(l):
-    if (l < 5):
+    if (l < 10):
         return
     else:
         roo.pensize(3)
@@ -190,7 +190,7 @@ draw(40)
 
 ########################################################
 def draw(l):
-    if (l < 5):
+    if (l < 10):
         return
     else:
 
@@ -214,7 +214,7 @@ roo.speed(2000)
 
 # recursion
 def draw(l):
-    if (l < 5):
+    if (l < 10):
         return
     else:
         roo.pensize(2)
@@ -237,7 +237,7 @@ roo.speed(2000)
 
 # recursion
 def draw(l):
-    if (l < 5):
+    if (l < 10):
         return
     else:
         roo.pensize(2)
@@ -260,7 +260,7 @@ roo.speed(2000)
 
 # recursion
 def draw(l):
-    if (l < 5):
+    if (l < 10):
         return
     else:
         roo.pensize(2)
@@ -277,8 +277,3 @@ def draw(l):
 
 draw(60)
 wn.exitonclick()
-wn.tracer(0)
-wn.update()
-tu.hideturtle()
-tu.done()
-
