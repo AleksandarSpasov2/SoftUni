@@ -1,9 +1,10 @@
 def move_command(command, hunt_pos):
     direction, step = command[1], int(command[2])
     r, c = hunt_pos[0], hunt_pos[1]
-    r = directions[direction][0] * step
-    c = directions[direction][1] * step
-
+    r = r + directions[direction][0] * step
+    c = c + directions[direction][1] * step
+    if matrix[r][c] == 'x':
+        
 
 
 
