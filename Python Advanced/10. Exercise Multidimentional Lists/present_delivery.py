@@ -1,10 +1,28 @@
+def eat_cookie(presents_left, nice_kids):
+    for coordinates in directions.values():
+        r = santa_pos[0] + coordinates[0]
+        c = santa_pos[1] + coordinates[1]
+
+        if matrix[r][c].isalpha():
+            if matrix[r][c] == "V":
+                nice_kids += 1
+
+            matrix[r][c] = '-'
+            presents_left -= 1
+
+        if not presents_left:
+            break
+
+    return presents_left, nice_kids
+
+
 total_presents = int(input())
 n = int(input())
 
 matrix = []
-s_pos = []
+santa_pos = []
 total_good_kids = 0
-count_nice_kids = 0
+nice_kids_visited = 0
 
 directions = {
     'up': (-1, 0),
@@ -17,54 +35,43 @@ for row in range(n):
     matrix.append(input().split())
 
     if 'S' in matrix[row]:
-        s_pos = [row, matrix[row].index("S")]
+        santa_pos = [row, matrix[row].index("S")]
 
     if 'V' in matrix[row]:
         total_good_kids += matrix[row].count('V')
 
-count_nice_kids = total_good_kids
 
-while True:
+command = input()
+
+while command != "Christmas morning":
+    santa_pos = [
+        santa_pos[0] + directions[command][0],
+        santa_pos[1] + directions[command][1],
+    ]
+
+    house = matrix[santa_pos[0]][santa_pos[1]]
+
+    if house == "V":
+        nice_kids_visited += 1
+        total_presents -= 1
+    elif house == 'C':
+        total_presents, nice_kids_visited = eat_cookie(total_presents,nice_kids_visited)
+
+    matrix[santa_pos[0]][santa_pos[1]] = '-'
+
+    if not total_presents or nice_kids_visited == total_good_kids:
+        break
     command = input()
 
-    if command == "Christmas morning":
-        break
+matrix[santa_pos[0]][santa_pos[1]] = "S"
 
-    r, c = s_pos
-    matrix[r][c] = '-'
-    r += directions[command][0]
-    c += directions[command][1]
+if not total_presents and nice_kids_visited < total_good_kids:
+    print("Santa ran out of presents!")
 
-    if matrix[r][c] == 'X':
-        matrix[r][c] = '-'
+[print(*row) for row in matrix]
 
-    if matrix[r][c] == "C":
-        first_position = r, c
-        for pos in directions.values():
-            new_r, new_c = r + pos[0], c + pos[1]
-            if 0 <= new_r < n and 0 <= new_c < len(matrix[0]):
-                if matrix[new_r][new_c] == 'V':
-                    total_presents -= 1
-                    total_good_kids -= 1
-                elif matrix[new_r][new_c] == 'X':
-                    matrix[new_r][new_c] = '-'
-
-    if matrix[r][c] == "V":
-        total_presents -= 1
-        total_good_kids -= 1
-        matrix[r][c] = '-'
-
-    matrix[r][c] = 'S'
-
-    if total_presents <= 0 and total_good_kids > 0:
-        print("Santa ran out of presents!")
-        break
-
-if total_presents <= 0 and total_good_kids <= 0:
-    print(f'Good job, Santa! {count_nice_kids} happy nice kid/s.')
+if nice_kids_visited == total_good_kids:
+    print(f'Good job, Santa! {total_good_kids} happy nice kid/s.')
 else:
-    print(f'No presents for {total_good_kids} nice kid/s.')
+    print(f'No presents for {total_good_kids - nice_kids_visited} nice kid/s.')
 
-# Print the matrix
-for row in matrix:
-    print(' '.join(row))
