@@ -1,9 +1,8 @@
-numbers_dictionary = {}
+my_dict = {'a': 1, 'b': 2}
 
-line = input()
-
-while line != 'Search':
-    numbers_as_string = line
-    number =
-
-    line = input()
+try:
+    print(my_dict['b'])
+except KeyError:
+    print("Not a valid key")
+finally:
+    print('Try Again')
