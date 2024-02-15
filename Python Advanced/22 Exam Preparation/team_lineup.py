@@ -1,4 +1,7 @@
-def team_lineup(*kwargs):
+def team_lineup(*args):
+   players = {}
+   for player_name, country in args:
+      
     
 
 
