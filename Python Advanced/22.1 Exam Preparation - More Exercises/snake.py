@@ -31,8 +31,7 @@ while food < 10:
     r = position[0] + directions[command][0]
     c = position[1] + directions[command][1]
 
-    
-
     if matrix[r][c] == '*':
         food += 1
-
+        matrix[r][c] = '-'
+    elif matrix[r][c] ==
